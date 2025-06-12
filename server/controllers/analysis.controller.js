@@ -41,16 +41,24 @@ export const analyze = async (req, res) => {
     JOB DESCRIPTION:
     ${jobDescription}
     
-    if no skills matched makesure you send correct response
-    Based on Job Description create a cover letter
-    Return a JSON response with:
+    TASKS:
+    
+    1. Extract a list of skills from the Job Description.
+    2. Compare those with the skills present in the Resume.
+    3. Calculate matchScore as:
+       (number of matched skills / total JD skills) * 100
+       Round to nearest integer.
+    4. If no skills match, return a score of 0.
+    5. Do NOT assume matches unless they are explicitly present in the resume.
+    
+    Return a JSON response with the following structure:
     {
       "matchScore": "out of 100",
-      "skillsMatched": [],
-      "skillsMissing": [],
-      "summary": "",
-      "suggestions": "",
-      "coverLetter": "..."
+      "skillsMatched": [list of matched skills],
+      "skillsMissing": [list of missing skills from JD],
+      "summary": "A summary of how well the resume fits the job",
+      "suggestions": "What to improve in the resume",
+      "coverLetter": "A personalized cover letter based on the resume and JD"
     }`;
 
     const result = await axios.post(
