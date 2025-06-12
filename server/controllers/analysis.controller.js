@@ -41,6 +41,7 @@ export const analyze = async (req, res) => {
     JOB DESCRIPTION:
     ${jobDescription}
     
+    if no skills matched makesure you send correct response
     Based on Job Description create a cover letter
     Return a JSON response with:
     {
