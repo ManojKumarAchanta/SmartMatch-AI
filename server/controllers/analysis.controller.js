@@ -86,16 +86,16 @@ export const analyze = async (req, res) => {
       });
     }
 
-    // const saved = await Analysis.create({
-    //   resumeText,
-    //   jobDescription,
-    //   matchScore: parseInt(parsed.matchScore),
-    //   skillsMatched: parsed.skillsMatched,
-    //   skillsMissing: parsed.skillsMissing,
-    //   summary: parsed.summary,
-    //   suggestions: parsed.suggestions,
-    //   coverLetter: parsed.coverLetter,
-    // });
+    const saved = await Analysis.create({
+      resumeText,
+      jobDescription,
+      matchScore: parseInt(parsed.matchScore),
+      skillsMatched: parsed.skillsMatched,
+      skillsMissing: parsed.skillsMissing,
+      summary: parsed.summary,
+      suggestions: parsed.suggestions,
+      coverLetter: parsed.coverLetter,
+    });
 
     res.json({
       success: true,
