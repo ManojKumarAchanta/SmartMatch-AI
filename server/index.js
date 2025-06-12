@@ -13,6 +13,6 @@ app.use(express.json());
 app.use("/api", analysisRouter);
 
 app.listen(process.env.PORT, () => {
-  // connectToDb();
+  connectToDb();
   console.log("Listening to port " + process.env.PORT);
 });
