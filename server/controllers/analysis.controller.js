@@ -97,7 +97,19 @@ export const analyze = async (req, res) => {
     //   coverLetter: parsed.coverLetter,
     // });
 
-    res.json({ success: true, data: saved });
+    res.json({
+      success: true,
+      data: {
+        resumeText,
+        jobDescription,
+        matchScore: parseInt(parsed.matchScore),
+        skillsMatched: parsed.skillsMatched,
+        skillsMissing: parsed.skillsMissing,
+        summary: parsed.summary,
+        suggestions: parsed.suggestions,
+        coverLetter: parsed.coverLetter,
+      },
+    });
   } catch (err) {
     console.error("Analysis error:", err);
 
