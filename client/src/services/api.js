@@ -2,7 +2,7 @@
 import axios from "axios";
 
 // Configure axios defaults
-axios.defaults.timeout = 10000; // 10 second timeout
+axios.defaults.timeout = 50000; // 10 second timeout
 axios.defaults.headers.common["Content-Type"] = "application/json";
 
 export const jobMatchAPI = {
