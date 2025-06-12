@@ -42,7 +42,7 @@ export const analyze = async (req, res) => {
     ${jobDescription}
     
     Based on Job Description create a cover letter
-
+    While Creating cover letter make sure to include the details from resume if not available replace with placeholders 
     Return a JSON response with:
     {
       "matchScore": "out of 100",
